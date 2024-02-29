@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadatos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/c0424d8c9c.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .card-container {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 0 0 calc(48% - 20px);
+      margin-bottom: 20px;
+      max-width: 500px;
+      max-height: 700px;
+      margin-top: 50px;
+      background: #A3DDE1;
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      /* Ajusta el tamaño fijo de las imágenes */
+      object-fit: cover;
+      /* Ajusta la forma en que las imágenes se ajustan al contenedor */
+    }
+
+    /* Botones para abrir modales */
+    .modal-button {
+      cursor: pointer;
+    }
+
+    .modal-title{
+      text-align: center;
+    }
+
+    /* Agregamos una clase de estilo personalizado para la animación del modal */
+    .fade-in {
+      animation: fadeIn 0.5s;
+      background: #A3DDE1;
+      max-width: 800px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- Titulo -->
+  <title>Sicefa</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- NavBar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="./sobreNosotros.html" class="active">Sobre Nosotros</a></li>
+        <li><a href="./login.html">Inicio de Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container" style="max-width: 1550px;">
+    <!-- Codigo de la pagina principal -->
+    <div class="card-container">
+      <!-- Botones para abrir modales -->
+      <div class="card">
+        <img src="../img/filosofia.jpg" class="card-img-top modal-button" alt="Imagen Filosofía" data-bs-toggle="modal"
+          data-bs-target="#modalFilosofia">
+        <h5 class="text">Filosofia</h5>
+      </div>
+      <div class="card">
+        <img src="../img/vision.jpg" class="card-img-top modal-button" alt="Imagen Visión" data-bs-toggle="modal"
+          data-bs-target="#modalVision">
+        <h5 class="text">Vision</h5>
+      </div>
+      <div class="card">
+        <img src="../img/mision.jpg" class="card-img-top modal-button" alt="Imagen Misión" data-bs-toggle="modal"
+          data-bs-target="#modalMision">
+        <h5 class="text">Mision</h5>
+      </div>
+      <div class="card">
+        <img src="../img/vision1.jpg" class="card-img-top modal-button" alt="Imagen Valores" data-bs-toggle="modal"
+          data-bs-target="#modalValores">
+        <h5 class="text">Valores</h5>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modales -->
+  <div class="modal fade custom-modal" id="modalFilosofia" tabindex="-1" aria-labelledby="modalFilosofiaLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content fade-in">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFilosofiaLabel">Filosofía</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../img/filosofia.jpg" class="card-img-top" alt="Imagen Filosofía">
+          <div class="card-body">
+            <p class="card-text">En nuestra farmacia, creemos en el poder transformador de la salud y el bienestar. Nos
+              esforzamos por ser más que un simple establecimiento comercial; somos un aliado confiable para nuestros
+              clientes en su búsqueda de una vida saludable. Nos guía la convicción de que cada individuo merece
+              atención personalizada y respetuosa, y nos comprometemos a escuchar y comprender sus necesidades para
+              brindarles soluciones farmacéuticas adecuadas y efectivas. Valoramos la empatía y la compasión en cada
+              interacción, porque entendemos que detrás de cada consulta hay una historia única. Nuestro enfoque
+              multidisciplinario y el trabajo en equipo son fundamentales para ofrecer un servicio integral y de
+              calidad, impulsado por el propósito de marcar una diferencia positiva en la vida de nuestros clientes y la
+              comunidad que servimos. En última instancia, nuestra filosofía se basa en la pasión por el cuidado de la
+              salud y la firme creencia de que podemos hacer una contribución significativa en el bienestar general de
+              las personas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade custom-modal" id="modalVision" tabindex="-1" aria-labelledby="modalVisionLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content fade-in">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalVisionLabel">Visión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../img/vision.jpg" class="card-img-top" alt="Imagen Visión">
+          <div class="card-body">
+            <h5 class="card-title">Visión</h5>
+            <p class="card-text">Ser reconocidos como la farmacia líder en nuestro compromiso de brindar productos y
+              servicios farmacéuticos de alta calidad, enfocados en mejorar la salud y bienestar de nuestros clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade custom-modal" id="modalMision" tabindex="-1" aria-labelledby="modalMisionLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content fade-in">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalMisionLabel">Misión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../img/mision.jpg" class="card-img-top" alt="Imagen Misión">
+          <div class="card-body">
+            <p class="card-text">Nuestra misión es proporcionar atención farmacéutica integral, personalizada y
+              confiable, ofreciendo medicamentos y productos de salud de primera calidad, asesorando a nuestros clientes
+              de manera profesional y cercana para mejorar su calidad de vida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade custom-modal" id="modalValores" tabindex="-1" aria-labelledby="modalValoresLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content fade-in">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalValoresLabel">Valores</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../img/vision1.jpg" class="card-img-top" alt="Imagen Valores">
+          <div class="card-body">
+            <ul>
+              <li>Compromiso con la salud</li>
+              <li>Profesionalismo</li>
+              <li>Confianza</li>
+              <li>Servicio al cliente</li>
+              <li>Responsabilidad social</li>
+              <li>Innovación</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Puedes agregar más modales según sea necesario -->
+
+  <footer>
+    <div>
+      <p>Derechos de autor &copy; 2023 Medicamos tu Vida S.A. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

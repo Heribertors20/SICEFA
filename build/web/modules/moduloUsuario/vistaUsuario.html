@@ -1,0 +1,48 @@
+<style>
+    input {
+        padding: 4px 8px 4px 8px;
+    }
+
+    input[type="button"] {
+        background-color: white;
+        margin-top: 20px;
+    }
+
+    input[type="password"] {
+        padding-left: 20px;
+    }
+
+    input[type="button"]:hover {
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    #formulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #formulario form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #formulario img {
+        width: 300px;
+        height: auto;
+        margin: 0 auto 20px; /* Auto para centrar horizontalmente y agregar margen inferior */
+    }
+</style>
+
+<div id="formulario">
+    <form>
+        <img src="../img/logo.png" alt="">
+        <h1 style="font-size: 40px;">Hola: <span id="user-name"></span></h1>
+        <input type="password" name="password" id="password-text" placeholder="Nueva contraseña"><br>
+        <input type="button" onclick="controller.cambiarPassword();" value="Enviar">
+    </form>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<h1>Gestión Producto</h1>
+<div class="main-container">
+    <div class="left">
+        <form class="fade-in">
+            <h3>Gestión Producto</h3>
+            <button type="button" id="closeButton" onclick="closeModal()">X</button>
+            <div>
+                <div class="row">
+                    <input type="text" name="nombre_producto" class="large-input" id="nombre_producto" placeholder="Nombre">
+                </div>
+                <div class="row">
+                    <input type="text" name="nombre_generico" class="small-input" id="nombre_generico" placeholder="Nombre Generico">
+                    <input type="text" name="forma_farmaceutica" class="small-input" id="forma_farmaceutica" placeholder="Forma Farmaceutica">
+                </div>
+                <div class="row">
+                    <input type="text" name="unidad_medida" class="small-input" id="unidad_medida" placeholder="Unidad de Medida">
+                    <input type="text" name="presentacion" class="small-input" id="presentacion" placeholder="Presentacion">                 
+                </div>
+                <div class="row">
+                    <input type="text" name="principal_indicacion" class="small-input" id="principal_indicacion" placeholder="Principal Indicacion">
+                    <input type="text" name="contraindicaciones" class="small-input" id="contraindicaciones" placeholder="Contraindicaciones">    
+                </div>
+                <div class="row">
+                    <input type="text" name="concentracion" class="small-input" id="concentracion" placeholder="Concentración">
+                    <input type="number" name="unidades_envase" class="small-input" id="unidades_envase" placeholder="Unidades en Envase">
+                </div>
+                <div class="row">
+                    <input type="text" name="precio_compra" class="small-input" id="precio_compra" placeholder="Precio Compra">
+                    <input type="text" name="precio_venta" class="small-input" id="precio_venta" placeholder="Precio Venta">
+                </div>
+                <div class="row">
+                    <input type="file" id="txtFoto" accept="image/*" onchange="controller.loadImage();" class="small-input">
+                    <input type="txt" id="txtData" hidden class="small-input">
+                    <input type="text" name="estatus" class="small-input" id="estatus" placeholder="Estatus" readonly> 
+                </div>
+                <div class="row">
+                    <img src="../img/placeholder.png" id="previewImage">
+                </div>
+            </div>
+            <div id="buttons">
+                <button type="button" onclick="controller.addProducto();"><i class="fa-solid fa-circle-plus"></i> <span>Registrar</span></button>
+                <button type="button" onclick="controller.editProducto();"><i class="fa-solid fa-pencil"></i> <span>Modificar</span></button>
+                <button type="button" id="deleteButton"><i class="fa-solid fa-circle"></i> <span>-</span></button>
+            </div>
+        </form>
+    </div>
+    <div class="right">
+        <div id="tabla">
+            <div id="filtros">
+                <button type="button"onclick="controller.showModal()"><i class="fa-solid fa-circle-plus"></i> <span>Registrar</span></button>
+                <input type="search" class="button large-input" id="buscar" placeholder="Buscar Producto" onkeyup="controller.searchProducto();">
+                <div class="checkbox-wrapper-2">
+                    <input type="checkbox" class="sc-gJwTLC ikxBAC" name="mostrar_inactivos" id="mostrar_inactivos" onchange="controller.loadTable();">
+                </div>
+            </div>
+            <div style="overflow-y: scroll; display: block; height: 490px;  margin-top: 20px;">
+                <table style="margin-top: 0px;">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Nombre Genérico</th>
+                            <th>Forma Farmaceutica</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblProducto"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

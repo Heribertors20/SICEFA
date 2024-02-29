@@ -1,0 +1,53 @@
+<h1>Gestión Pedidos</h1>
+<div class="main-container">
+    <div class="left">
+        <form class="fade-in">
+            <h3>Gestión Pedidos</h3>
+            <button type="button" id="closeButton" onclick="closeModal()">X</button>
+            <div>
+                <div class="row">
+                    <input type="text" class="large-input" id="txt_sucursal" placeholder="Sucursal" required readonly>
+                </div>
+                <div class="row">
+                    <input type="text" class="large-input" id="txt_direccion" placeholder="Direccion" required readonly>
+                </div>
+                <div class="row">
+                    <input type="text" class="small-input" id="txt_empleado" placeholder="Empleado" required readonly>
+                    <input type="text" class="small-input" id="txt_time" placeholder="Fecha y Hora" required>
+                </div>
+            </div> 
+            <div id="products">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="column-4">Producto</th>
+                            <th id="column-1" style="border-right: 1px black solid;">Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblProducto"></tbody>
+                </table>
+            </div>
+            <div id="buttons">
+                <button type="button" onclick="controller.atenderPedido();" style="width: 100%;"><i class="fa-solid fa-circle-plus"></i> Atender Pedido</button>
+            </div>
+        </form>
+    </div>
+    <div class="right">
+        <div id="tabla">
+            <form id="filtros">
+                <input type="search" class="button small-input" placeholder="Buscar Pedido" onkeyup="controller.searchCompra();" style="width: 100%;">
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IdCompra</th>
+                        <th>Empleado</th>
+                        <th>Sucursal</th>                        
+                    </tr>
+                </thead>
+                <tbody id="tblCompra"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

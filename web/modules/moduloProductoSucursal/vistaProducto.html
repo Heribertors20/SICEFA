@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<h1>Gestión Producto</h1>
+<div class="main-container" style="display: flex; justify-content: center;">
+    <div id="tabla">
+        <div id="filtros">
+            <input type="search" class="button large-input" id="buscar" placeholder="Buscar Producto" onkeyup="controller.searchProducto();" style="width: 100%;">
+        </div>
+        <div style="overflow-y: scroll; display: block; height: calc(100vh - 251px); margin-top: 20px;" id="scroll-table">
+            <table style="margin-top: 0px; height: 100%;">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th style="width: 130px;">Foto</th>
+                        <th style="width: 30px;">Existencias</th>
+                    </tr>
+                </thead>
+                <tbody id="tblProducto"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

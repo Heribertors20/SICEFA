@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Metadoatos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Css -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <!-- alerts -->
+  <link rel="stylesheet" href="../css/toastr.css">
+  <!-- Titulo -->
+  <title>Sicefa</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- NavBar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="./sobreNosotros.html">Sobre Nosotros</a></li>
+        <li><a href="./login.html" class="active">Inicio de Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Codigo de la pagina principal -->
+    <div class="inferior">
+      <img src="../img/logo.webp" style="width: 61.85vw; height: 87vh; object-fit: contain;" alt="">
+    </div>
+    <div class="superior">
+      <div id="login">
+        <form>
+          <h1>Inicio de sesión</h1>
+          <label id="firstLabel">Usuario <i class="fa-solid fa-circle-user"></i></label><br>
+          <div>
+            <input type="text" id="usuario" name="usuario" required><br>
+          </div>
+          <label>Contraseña <i class="fa-solid fa-lock"></i></label><br>
+          <div>
+            <input type="password" id="contrasenia" name="contraseña" required><br>
+          </div>
+          <div>
+            <input type="button" value="Acceder" id="btnSubmit" onclick="login();">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <div>
+      <p>Derechos de autor &copy; 2023 Medicamos tu Vida S.A. Todos los derechos reservados.</p>
+    </div>
+    <!--
+    <script>
+      var controller
+      import("../modules/moduloUsuario/controllerUsuario.js").then((module) => {
+        controller = module;
+      });
+    </script>-->
+    <script src="../js/ctrlLogin.js"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c0424d8c9c.js" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/toastr.js"></script>
+    <script>
+      toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    </script>
+  </footer>
+</body>
+
+</html>

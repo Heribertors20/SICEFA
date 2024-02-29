@@ -1,0 +1,94 @@
+<h1>Gestión Empleado</h1>
+<div class="main-container">
+    <div class="left">
+        <form class="fade-in">
+            <h3>Gestión Empleado</h3>
+            <button type="button" id="closeButton" onclick="closeModal()">X</button>
+            <div>
+                <div class="row">
+                    <input type="text" name="nombre" class="super-small-input" id="nombre" placeholder="Nombre del Empleado" required>
+                    <input type="text" name="a_paterno" class="super-small-input" id="a_paterno" placeholder="Apellido Paterno" required>
+                    <input type="text" name="a_materno" class="super-small-input" id="a_materno" placeholder="Apellido Materno" required>
+                </div>
+                <div class="row">
+                    <select name="genero" id="genero" class="super-small-input">
+                        <option value="" disabled selected>Genero</option>
+                        <option value="H">Hombre</option>
+                        <option value="M">Mujer</option>
+                        <option value="O">Otro</option>
+                    </select>
+                    <input type="date" name="fecha_nacimiento" class="super-small-input" id="fecha_nacimiento" placeholder="Fecha Nacimiento" required>
+                    <input type="text" name="rfc" class="super-small-input" id="rfc" placeholder="RFC" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="curp" class="super-small-input" id="curp" placeholder="CURP" required>
+                    <input type="text" name="domicilio" class="super-small-input" id="domicilio" placeholder="Domicilio" required>
+                    <input type="number" name="codigo-postal" class="super-small-input" id="codigo-postal" placeholder="Codigo Postal" required min="0" max="99999">
+                </div>
+                <div class="row">
+                    <input type="text" name="ciudad" class="super-small-input" id="ciudad" placeholder="Ciudad" required>
+                    <input type="text" name="estado" class="super-small-input" id="estado" placeholder="Estado" required>
+                    <input type="tel" name="telefono" class="super-small-input" id="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="row">
+                    <input type="date" name="fecha_ingreso" class="super-small-input" id="fecha_ingreso" placeholder="Fecha Ingreso" readonly>
+                    <select name="genero" id="puesto" class="super-small-input">
+                        <option value="" disabled selected>Puesto</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Atención a clientes">Atención a clientes</option>
+                    </select>
+                    <input type="text" name="salario" class="super-small-input" id="salario" placeholder="Salario" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="email" class="super-small-input" id="email" placeholder="Email" required>
+                    <input type="text" name="codigo" class="super-small-input" id="codigo" placeholder="Codigo Empleado" readonly>
+                    <input type="text" name="nombreUsuario" class="super-small-input" id="nombreUsuario" placeholder="Nombre del usuario" required>
+                </div>
+                <div class="row">
+                    <input type="password" name="contrasenia" class="super-small-input" id="contrasenia" placeholder="Contraseña" required>
+                    <select name="rol" id="rol" class="super-small-input">
+                        <option value="" disabled selected>Rol</option>
+                        <option value="ADMS">Administrador de Sucursal</option>
+                        <option value="EMPS">Empleado de Sucursal</option>
+                    </select>
+                    <input type="text" name="activo" class="super-small-input" id="activo" placeholder="Estatus" readonly>
+                </div>
+                <div class="row">
+                    <img src="../img/placeholder.png" id="previewImage" style="height: calc(100vh - 700px);">
+                </div>
+                <div class="row">
+                    <input type="file" id="txtFoto" accept="image/*" onchange="controller.loadImage();" class="large-input">
+                    <input type="text" id="txtData" hidden class="small-input">
+                </div>
+                
+            </div>
+            <div id="buttons">
+                <button type="button" onclick="controller.addEmpleado();" id="btnAgregar"><i class="fa-solid fa-circle-plus"></i> <span>Registrar</span></button>
+                <button type="button" onclick="controller.editEmpleado();"><i class="fa-solid fa-pencil"></i> <span>Modificar</span></button>
+                <button type="button" id="deleteButton"><i class="fa-solid fa-circle"></i> <span>-</span></button>
+            </div>
+        </form>
+    </div>
+    <div class="right">
+        <div id="tabla">
+            <div id="filtros">
+                <button type="button"onclick="controller.showModal()"><i class="fa-solid fa-circle-plus"></i> <span>Registrar</span></button>
+                <input type="search" class="button large-input" name="buscar" id="buscar" placeholder="Buscar Empleado" onkeyup="controller.searchEmpleado();">
+                <div class="checkbox-wrapper-2">
+                    <input type="checkbox" class="sc-gJwTLC ikxBAC" name="mostrar-inactivos" id="mostrar-inactivos" onchange="controller.loadTable();">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Codigo Empleado</th>
+                        <th>Nombre Completo</th>
+                        <th>Puesto</th>
+                        <th>Salario</th>
+                    </tr>
+                </thead>
+                <tbody id="tblEmpleado"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

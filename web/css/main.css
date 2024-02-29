@@ -1,0 +1,100 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: black;
+  margin: 0; /* Eliminar márgenes del cuerpo */
+}
+
+header {
+  background-color: black;
+}
+
+nav {
+  height: 60px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+nav ul li {
+  float: left;
+  padding-left: 24px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: #2cb1c7;
+}
+.active {
+  color: #2cb1c7;
+}
+
+main {
+  min-height: calc(100vh - 110px);
+  position: relative; /* Añadir posición relativa al contenido principal */
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('../img/background2.png') center/cover no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+  width: 100%; /* Ajustar el ancho al 100% */
+  height: 100%; /* Ajustar la altura al 100% */
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+footer div p {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+/* Bootstrap*/
+
+.card {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+ 
+}
+
+.card-body{
+  background-color: #A3DDE1;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.card-text{
+  text-align: justify;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly !important;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,100 @@
+<h1>Gestión Sucursal</h1>
+<div class="main-container">
+    <div class="left">
+        <form class="fade-in">
+            <h3>Gestión Sucursal</h3>
+            <button type="button" id="closeButton" onclick="closeModal()">X</button>
+            <div>
+                <div class="row">
+                    <input type="text" name="nombre-sucursal" class="large-input" id="nombre-sucursal" placeholder="Nombre de la Sucursal" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="nombre-titular" class="small-input" id="nombre-titular" placeholder="Nombre del Titular" required>
+                    <input type="text" name="rfc-titular" class="small-input" id="rfc-titular" placeholder="RFC del Titular" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="domicilio" class="small-input" id="domicilio" placeholder="Domicilio" required>
+                    <input type="text" name="colonia" class="small-input" id="colonia" placeholder="Colonia" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="ciudad" class="small-input" id="ciudad" placeholder="Ciudad" required>
+                    <select class="small-input" id="estado" required>
+                        <option value="" disabled selected>Estado</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Distrito Federal">Distrito Federal</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ingancio de la Llave">Veracruz de Ingancio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="number" name="codigo-postal" class="small-input" id="codigo-postal" placeholder="Código Postal" required min="0" max="99999">
+                    <input type="tel" name="telefono" class="small-input" id="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="latitud" class="small-input" id="latitud" placeholder="Latitud" required>
+                    <input type="text" name="longitud" class="small-input" id="longitud" placeholder="Longitud" required>
+                </div>
+                <div class="row">
+                    <input type="text" name="estatus" class="large-input" id="estatus" placeholder="Estatus" readonly> 
+                </div>
+            </div> 
+            <div id="mapContainer"></div>
+            <div id="buttons" style="margin-top: 0px;">
+                <button type="button" onclick="controller.addSucursal();"><i class="fa-solid fa-circle-plus"></i> <span>Registrar</span></button>
+                <button type="button" onclick="controller.editSucursal();"><i class="fa-solid fa-pencil"></i> <span>Modificar</span></button>
+                <button type="button" id="deleteButton"><i class="fa-solid fa-circle"></i> <span>-</span></button>
+            </div>
+        </form>
+    </div>
+    <div class="right">
+        <div id="tabla">
+            <div id="filtros">
+                <button type="button"onclick="controller.showModal()"><i class="fa-solid fa-circle-plus"></i> <span>Registrar</span></button>
+                <input type="search" class="button large-input" id="buscar" placeholder="Buscar Sucursal" onkeyup="controller.searchSucursal();">
+                <div class="checkbox-wrapper-2">
+                    <input type="checkbox" class="sc-gJwTLC ikxBAC" name="mostrar-inactivos" id="mostrar-inactivos" onchange="controller.loadTable();">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Sucursal</th>
+                        <th>Titular</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody id="tblSucursal">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
