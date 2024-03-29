@@ -12,7 +12,7 @@ import java.sql.CallableStatement;
 
 /**
  *
- * @author Melchor Ruiz Gonzalez
+ * @author BrainBox
  */
 public class ConnectionMySql {
     
