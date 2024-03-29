@@ -38,7 +38,7 @@ Este proyecto es un sistema central de farmacias que gestiona tanto la matriz (C
 ## Especificaciones
 
 Las credenciales para poder acceder desde el login son:
-- Central: `administrador` / `Administrador`.
+- Central: `Administrador` / `Administrador`.
 - Sucursal: `Admins2` / `Admins2`.
 
 ## Licencia
